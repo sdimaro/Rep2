@@ -1,0 +1,50 @@
+<!-- Creare una funzione chiamata getElement che
+riceve come parametro il nome di un tag. La
+funzione deve, usando getElementsByTagName,
+selezionare la lista dei tag e aggiungere un bordo
+di 5 px solid e rosso: lo stile sarebbe 5px solid red -->
+
+<!DOCTYPE html>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Slide 98</title>
+    <style>
+        .democlass{
+            border: 5px solid red;
+        }
+    </style>
+  </head>
+  <body>
+        <h1 style="text-align: center;">ESERCIZIO SLIDE 98</h1><br>
+        <h2>Hello, World!</h2>
+        <h2>Slide 98</h2>
+        <h6>titolo h6</h2>
+        <p>paragrafo</p>
+        <h2>Ultimo titolo</h2>
+
+        <select id="tag">
+            <option value="h1">h1</option>
+            <option value="h2">h2</option>
+            <option value="h3">h3</option>
+            <option value="h4">h4</option>
+            <option value="h5">h5</option>
+            <option value="h6">h6</option>
+            <option value="p">p</option>
+        </select>
+
+        <input type="button" name="bh2" id="bh2" value="change" onclick="selezioneTag()"></button>
+    <script>
+    function getElement(nTag) {
+        let tag = document.getElementsByTagName(nTag);
+        for(let i = 0; i < tag.length; i++){
+        tag[i].setAttribute("class", "democlass");
+        }
+    }
+    function selezioneTag(){
+        let nomeTag = document.getElementById("tag").value;
+        getElement(nomeTag);
+    }
+    </script>
+  </body>
+</html>
